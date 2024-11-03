@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* { 
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+
+:root {
+    --color-white: #fff;
+    --color-pink: #d12f7a;
+    --color-black: #0c0c0c;
+    --color-blue: #073fcc;
+    --color-purple: #5f01ac;
+
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+
+#person {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--color-black);
+
+}
+
+.person-content{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background: var(--color-black);
+
+}
+
+.person-content div h1 {
+    padding: 0px 4px;
+    color: transparent;
+
+    position: relative;
+    width: fit-content;
+
+    font-size: 4.5rem;
+    line-height: 6rem;
+
+    animation: written_text .5s ease forwards;
+}
+
+.person-content div h1:nth-child(1){
+    animation-delay: 1s;
+}
+.person-content div h1:nth-child(2){
+    animation-delay: 2s;
+}
+.person-content div h1:nth-child(3){
+    animation: written_text_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0px;
+    height: 50px;
+    background: var(--color-blue);
+
+    animation: written_text_box 1s ease;
+}
+
+.person-content div h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+.person-content div h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+.person-content div h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+.person-name {
+    margin-top: 11rem;
+}
+
+.stacks-content {
+    display: flex;  
+    justify-content: center;
+
+    flex-direction: column;
+    margin-top: 6rem;
+}
+
+.stacks-content h3 {
+    color: var(--color-blue);
+    font-size: 1.15rem;
+
+    margin-left: 20px;
+}
+
+.stacks {
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: row;
+}
+
+.stacks ul li {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    margin: 10px;
+    padding: 10px;
+
+    list-style: none;
+}
+
+.stacks ul li img {
+    width: 30px;
+    height: auto;
+
+    transition: transform ,.5s ease;
+}
+
+.stacks ul li img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.stacks ul li div:hover::after {
+    content: attr(data);
+    position: absolute;
+    top: 50px;
+    left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-white);
+}
+
+.person-background {
+    height: 100vh;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-direction: column;
+
+    background-image: url(./img/img1.jpg);
+    background-size: cover;
+    background-position: top center;
+
+    z-index: 1;
+}
+
+.person-background::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: .6;
+    z-index: -1;
+
+    background:
+        linear-gradient(90deg, transparent 30%, var(--color-black)),
+        linear-gradient(180deg, transparent 30%, var(--color-black)),
+        linear-gradient(0deg, transparent 30%, var(--color-black));        
+}
+
+.wrapper-profile-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px;
+    margin: 20px 15px;
+
+    border-radius: 50%;
+    background:
+    radial-gradient(rgba(0,0,0,0.15) 60%, transparent 0),
+    linear-gradient(to top right, #ffa500 0%, #ff1493 100%);
+       
+
+}
+
+.wrapper-profile-photo img{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+
+}
+
+.links img {
+    width: 30px;
+    height: 30px;
+
+    margin: 10px;
+    filter: brightness(.8);
+  
+}
+
+.links img:hover{
+    filter: brightness(1.8);
+    transform: scale(1.2);
+    cursor: pointer;
+
+    transition: transform ,.5s ease;
+}
+
+#about {
+    height: 100vh;
+    width: 100%;
+    background: var(--color-black);
+
+    display: flex;
+    color: var(--color-white);
+}
+
+.background-about {
+    width: 50%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper{
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+}
+
+.img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: 
+        linear-gradient(.25turn, transparent 30%, var(--color-black)),
+        linear-gradient(.5turn, transparent 30%, var(--color-black)),
+        linear-gradient(1turn, transparent 30%, var(--color-black));
+        
+}
+
+.img-wrapper img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box-abaut{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 50%;
+
+    padding: 3rem   ;
+}
+
+.section-subtitle h2 p {
+    display: inline-block;
+    font-size: 3rem;
+}
+
+.section-subtitle h2 p:nth-child(2) span {
+    padding: 3px 5px;
+    border-radius: 4px;
+
+    color: var(--color-black);
+    background: var(--color-white);
+}
+
+.box-abaut h3 {
+    margin: 3rem;
+    font-size: 2rem;
+}
+
+.box-abaut h3 p {
+    display: inline-block;
+    
+    width: fit-content;
+    padding: 2px 4px;
+    border-radius: 4px;
+
+    color: var(--color-black);
+    background: var(--color-pink);
+}
+
+.box-abaut h4 {
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+}
+
+.box-abaut h4 p {
+    display: inline;
+    padding: 2px 4px;
+
+    color: var(--color-blue);
+    font-size: bold;
+    font-weight: 1.75rem;
+}
+
+.button-cta {
+    display: flex;
+
+    max-width: 190px;
+    margin: 4rem;
+}
+
+.button-cta button {
+    display:  inline-block;
+
+    width: 100%;
+    max-width:  172px;
+
+    padding: 10px;
+    margin-bottom: 3rem;
+
+    font-family: 'poppis', sans-serif;
+    font-weight: 700;
+    letter-spacing: .15rem;
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-cta button:hover {
+    transition: all .3s ease;
+    filter: brightness(.8);
+}
+
+@keyframes written_text {
+    100% {
+        color: var(--color-white);
+    }
+}
+
+@keyframes written_text_name {
+    100% {
+        color: var(--color-blue);
+    }
+}
+@keyframes written_text_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
